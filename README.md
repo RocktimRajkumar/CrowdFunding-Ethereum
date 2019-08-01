@@ -14,3 +14,10 @@
 |createRequest|called by the manager to create a new 'spending request'|
 |approveRequest|called by each contributor to approve a spending request|
 |finalizeRequest|After a request has gotten enough approvals, the manager can call this to get money sent  to the vendor|
+<br>**Request Struc**
+|Name  |Type  |Purpose|
+|--|--|--|
+| description |string  |Describes why the request is being created|
+|value|uint|Amount of money that the manager wants to send to the vendor|
+|recipient|address|Address that the money will be sent to|
+|complete|bool|True if the request has already been processed (money sent)|
