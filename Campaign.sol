@@ -37,4 +37,17 @@ contract Campaign{
         approvers.push(msg.sender);
     }
     
+    //creating a new request by the manager
+    function createRequest(string description, uint value, address recipient)
+        public authorization{
+            Request memory newReq = Request({
+                description : description,
+                value : value,
+                recipient : recipient,
+                complete : false
+            });
+            
+            requests.push(newReq);
+        }
+    
 }
