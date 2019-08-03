@@ -10,12 +10,21 @@ contract Campaign{
     }
     
     // === Fields ===
+    Request[] public requests;
     address public manager;
     uint public minimumContribution;
     address[] public approvers;
     
     
     // === Methods ===
+    
+    // == Modifier ==
+    modifier authorization(){
+        require(msg.sender == manager);
+        _;
+    }
+    
+    // == constructor ==
     //Setting the manager and minimum amount to contribute
     function Compaign(uint minimum) public {
         manager = msg.sender;
@@ -27,4 +36,5 @@ contract Campaign{
         require(msg.value > minimumContribution);
         approvers.push(msg.sender);
     }
+    
 }
