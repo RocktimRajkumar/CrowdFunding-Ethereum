@@ -7,13 +7,15 @@ contract Campaign{
         uint value;
         address recipient;
         bool complete;
+        uint approvalCount;
+        mapping(address => bool) approvals;
     }
     
     // === Fields ===
     Request[] public requests;
     address public manager;
     uint public minimumContribution;
-    address[] public approvers;
+    mapping(address => bool) public approvers;
     
     
     // === Methods ===
@@ -34,7 +36,7 @@ contract Campaign{
     //donate money to compaign and became an approver
     function contribute() public payable{
         require(msg.value > minimumContribution);
-        approvers.push(msg.sender);
+        approvers[msg.sender] = true;
     }
     
     //creating a new request by the manager
@@ -44,7 +46,8 @@ contract Campaign{
                 description : description,
                 value : value,
                 recipient : recipient,
-                complete : false
+                complete : false,
+                approvalCount : 0
             });
             
             requests.push(newReq);
