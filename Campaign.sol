@@ -16,6 +16,7 @@ contract Campaign{
     address public manager;
     uint public minimumContribution;
     mapping(address => bool) public approvers;
+    uint public approversCount;
     
     
     // === Methods ===
@@ -36,7 +37,9 @@ contract Campaign{
     //donate money to compaign and became an approver
     function contribute() public payable{
         require(msg.value > minimumContribution);
+        
         approvers[msg.sender] = true;
+        approversCount++;
     }
     
     //creating a new request by the manager
@@ -53,6 +56,7 @@ contract Campaign{
             requests.push(newReq);
         }
         
+    //approving a particular request by the user
     function approveRequest(uint index) public {
         Request storage request = requests[index];
         
@@ -61,7 +65,17 @@ contract Campaign{
         
         request.approvals[msg.sender] = true;
         request.approvalCount++;
+    }
+    
+    //final approval of request by the manager and sending the amount
+    function finalizeRequest(uint index) public authorization{
+        Request storage request = requests[index];
         
+        require(request.approvalCount > (approversCount/2));
+        require(!request.complete);
+        
+        request.recipient.transfer(request.value);
+        request.complete = true;
         
     }
     
