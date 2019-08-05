@@ -4,7 +4,7 @@
 |--|--|--|
 |manager  |address  |address of the person who is managing this compaign|
 |minimumContribution|unint|Minimum donation required to be considered a contributor or 'approver' |
-|approvers|address[]|List of addresses for every person who has donated money|
+|approvers|mapping|List of addresses for every person who has donated money|
 |requests|Request[]|List of requests that the manager has created.|
 <br>**Functions**
 |name| desc |
@@ -18,6 +18,8 @@
 |Name  |Type  |Purpose|
 |--|--|--|
 | description |string  |Describes why the request is being created|
-|value|uint|Amount of money that the manager wants to send to the vendor|
+|amount|uint|Amount of money that the manager wants to send to the vendor|
 |recipient|address|Address that the money will be sent to|
 |complete|bool|True if the request has already been processed (money sent)|
+|approvals|mapping|Track who has voted|
+|approvalCount|uint|Track number of approvals|
