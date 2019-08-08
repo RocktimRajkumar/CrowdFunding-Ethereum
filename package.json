@@ -7,5 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "ganache-cli": "^6.5.1",
+    "mocha": "^6.2.0",
+    "solc": "^0.5.10",
+    "web3": "^1.0.0-beta.35"
+  }
 }
