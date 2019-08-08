@@ -1,5 +1,23 @@
 pragma solidity ^0.4.17;
 
+contract CampaignFactory{
+    // ==== Fields ====
+    address[] public deployedCampaigns;
+    
+    // ==== Modifier ====
+    // ==== create a new contract ====
+    function createCampaign(uint minimum) public {
+        address newCampaign = new Campaign(minimum,msg.sender);
+        deployedCampaigns.push(newCampaign);
+    }
+    
+    // ==== returning all the address of the deployed contract
+    function getDeployedCampaigns() public view returns (address[]){
+        return deployedCampaigns;
+    }
+    
+}
+
 contract Campaign{
     // collection of key value pairs
     struct Request{
@@ -29,8 +47,8 @@ contract Campaign{
     
     // == constructor ==
     //Setting the manager and minimum amount to contribute
-    function Compaign(uint minimum) public {
-        manager = msg.sender;
+    constructor(uint minimum, address creator) public {
+        manager = creator;
         minimumContribution = minimum;
     }
     
