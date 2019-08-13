@@ -50,7 +50,7 @@
  2.  Request Ether by sharing your ethereum address in social media <br>(`https://faucet.rinkeby.io/)`
  3. Get 0.01 ether free by giving the ethereum address <br>`(http://rinkeby-faucet.com/)`
  4. Create an account in [https://infura.io](https://infura.io/)
- 5. Create .env file in root directory and add these line to it.
+ 5. Create .env file in Ethereum directory and add these line to it.
 	 
 
 	> mnemonic = 'Your mnemonic code' <br>
