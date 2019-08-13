@@ -52,4 +52,22 @@ describe('Campaigns', () => {
 
   });
 
+  it('requires a minimum contribution', async () => {
+    var check = true;
+    try {
+      await campaign.methods.contribute().send({
+        from: accounts[0],
+        value: 200
+      });
+      check = false;
+    } catch (error) {
+      check = true;
+    }
+    if (check) {
+      assert(false);
+    } else {
+      assert(true);
+    }
+  });
+
 });
