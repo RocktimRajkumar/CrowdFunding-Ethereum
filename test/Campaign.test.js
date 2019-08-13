@@ -83,4 +83,36 @@ describe('Campaigns', () => {
 
   });
 
+  it('processes requests', async () => {
+    await campaign.methods.contribute().send({
+      from: accounts[0],
+      value: web3.utils.toWei('10', 'ether')
+    });
+
+    var beforeBlnc = await web3.eth.getBalance(accounts[1]);
+
+    await campaign.methods.createRequest('Buy solar light', web3.utils.toWei('5', 'ether'), accounts[1])
+      .send({
+        from: accounts[0],
+        gas: 1000000
+      });
+
+    await campaign.methods.approveRequest(0).send({
+      from: accounts[0],
+      gas: '1000000'
+    });
+
+    await campaign.methods.finalizeRequest(0).send({
+      from: accounts[0],
+      gas: '1000000'
+    });
+
+    var afterBlnc = await web3.eth.getBalance(accounts[1]);
+    beforeBlnc = parseFloat(web3.utils.fromWei(beforeBlnc, 'ether'));
+    afterBlnc = parseFloat(web3.utils.fromWei(afterBlnc, 'ether'));
+    
+    assert(afterBlnc + 4 > beforeBlnc);
+
+  });
+
 });
