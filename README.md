@@ -73,7 +73,7 @@
 |react-dom|16.9.0|DOM specific methods that can be used on React application|
 
 ### `Steps`
-- **To Compile the Contract**
+- **To install dependencies**
  > npm install
  - **To Compile the Contract**
  > node compile.js
@@ -81,6 +81,8 @@
  > npm run test
  - **To deploy the Contract**
  > node deploy.js
+ - **To run the application**
+ > npm run dev
 
  ## `UI Routing`
  | Path | Description |
