@@ -73,6 +73,8 @@
 |react-dom|16.9.0|DOM specific methods that can be used on React application|
 
 ### `Steps`
+- **To Compile the Contract**
+ > npm install
  - **To Compile the Contract**
  > node compile.js
  - **To test the Contract**
