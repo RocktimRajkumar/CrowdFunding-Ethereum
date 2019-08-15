@@ -68,6 +68,9 @@
 | web3 |1.0.0-beta.55 |Ethereum JavaScript API which connects to the Generic JSON RPC spec. |
 | dotenv|8.0.0 | Loads environment variables from a `.env` file into `process.env`|
 | fs-extra| 8.1.0 |file system methods that aren't included in the native fs|
+|next|9.0.3|JavaScript framework to build server-side rendering and static web application using React|
+|react|16.9.0|JavaScript library for creating user interfaces|
+|react-dom|16.9.0|DOM specific methods that can be used on React application|
 
 ### `Steps`
  - **To Compile the Contract**
