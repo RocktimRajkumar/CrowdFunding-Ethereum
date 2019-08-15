@@ -80,6 +80,7 @@ contract Campaign{
         
         require(approvers[msg.sender]);
         require(!request.approvals[msg.sender]);
+        require(!request.complete);
         
         request.approvals[msg.sender] = true;
         request.approvalCount++;
