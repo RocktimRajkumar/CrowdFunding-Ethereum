@@ -44,7 +44,7 @@
 |recipient|address|Address that the money will be sent to|
 |complete|bool|True if the request has already been processed (money sent)|
 
-###  Prerequisite
+###  `Prerequisite`
 
  1. Install **Metamask** as Google Chrome Extension and Create an account.
  2.  Request Ether by sharing your ethereum address in social media <br>(`https://faucet.rinkeby.io/)`
@@ -57,7 +57,7 @@
 	link = 'Your infura end point link '
 
 
-### Dependencies Used
+### `Dependencies Used`
 
 | Name | Version | Description |
 |--|--|--|
@@ -69,7 +69,7 @@
 | dotenv|8.0.0 | Loads environment variables from a `.env` file into `process.env`|
 | fs-extra| 8.1.0 |file system methods that aren't included in the native fs|
 
-### Steps
+### `Steps`
  - **To Compile the Contract**
  > node compile.js
  - **To test the Contract**
@@ -77,7 +77,7 @@
  - **To deploy the Contract**
  > node deploy.js
 
- ## UI Routing
+ ## `UI Routing`
  | Path | Description |
  |--|--|
  | / | List of Campaigns |
