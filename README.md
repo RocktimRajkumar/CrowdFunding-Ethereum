@@ -76,3 +76,12 @@
  > npm run test
  - **To deploy the Contract**
  > node deploy.js
+
+ ## UI Routing
+ | Path | Description |
+ |--|--|
+ | / | List of Campaigns |
+ | /campaigns/new | Form to make a campaign |
+ | /campaigns/0x8147 | Campaign details for campaign at address 0x8147 |
+ | /campaigns/0x8147/requests | Requests for campaign at address 0x8147 | 
+ | /campaigns/0x8147/requests/new | Form to create a request for campaign at address 0x8147 |
