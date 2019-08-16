@@ -61,17 +61,18 @@
 
 | Name | Version | Description |
 |--|--|--|
-| solc |0.4.26 | Programming language to write smart contracts |
+| solc | 0.4.26 | Programming language to write smart contracts |
 | ganache-cli  | 6.5.1 | Local Ethereum Test Network |
 | mocha | 6.2.0 | JavaScript test framework |
 |truffle-hdwallet-provider | 1.0.16 | The **Truffle HDWallet provider** is a convenient and easy to configure network connection to ethereum through infura.io |
-| web3 |1.0.0-beta.55 |Ethereum JavaScript API which connects to the Generic JSON RPC spec. |
-| dotenv|8.0.0 | Loads environment variables from a `.env` file into `process.env`|
-| fs-extra| 8.1.0 |file system methods that aren't included in the native fs|
-|next|9.0.3|JavaScript framework to build server-side rendering and static web application using React|
-|react|16.9.0|JavaScript library for creating user interfaces|
-|react-dom|16.9.0|DOM specific methods that can be used on React application|
-|semantic-ui-react|0.87.3|react component kit comes with pre component with styling already places on it|
+| web3 | 1.0.0-beta.55 | Ethereum JavaScript API which connects to the Generic JSON RPC spec. |
+| dotenv| 8.0.0 | Loads environment variables from a `.env` file into `process.env`|
+| fs-extra| 8.1.0 | file system methods that aren't included in the native fs |
+| next | 9.0.3 | JavaScript framework to build server-side rendering and static web application using React |
+| react | 16.9.0 | JavaScript library for creating user interfaces |
+| react-dom | 16.9.0 | DOM specific methods that can be used on React application |
+| semantic-ui-react | 0.87.3 | react component kit provides pre define react component |
+| semantic-ui-css | 2.4.1 | react component kit provides theme to react component as CSS |
 
 ### `Steps`
 - **To install dependencies**
