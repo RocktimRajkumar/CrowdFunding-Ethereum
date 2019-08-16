@@ -71,6 +71,7 @@
 |next|9.0.3|JavaScript framework to build server-side rendering and static web application using React|
 |react|16.9.0|JavaScript library for creating user interfaces|
 |react-dom|16.9.0|DOM specific methods that can be used on React application|
+|semantic-ui-react|0.87.3|react component kit comes with pre component with styling already places on it|
 
 ### `Steps`
 - **To install dependencies**
