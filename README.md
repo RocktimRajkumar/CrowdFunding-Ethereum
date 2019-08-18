@@ -73,6 +73,7 @@
 | react-dom | 16.9.0 | DOM specific methods that can be used on React application |
 | semantic-ui-react | 0.87.3 | react component kit provides pre define react component |
 | semantic-ui-css | 2.4.1 | react component kit provides theme to react component as CSS |
+| next-routes | 1.4.2 | Dynamic Routes for Next.js |
 
 ### `Steps`
 - **To install dependencies**
