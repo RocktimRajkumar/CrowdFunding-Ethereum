@@ -34,6 +34,8 @@
 |createRequest|called by the manager to create a new 'spending request'|
 |approveRequest|called by each contributor to approve a spending request|
 |finalizeRequest|After a request has gotten enough approvals, the manager can call this to get money sent  to the vendor|
+|getSummary() |function to retrieving Campaign balance, minimumContribution , no of requests , no of Contributors and manager address |
+|getRequestsCount() | function returning no of requests |
 
 <br>**Request Struc**
 
