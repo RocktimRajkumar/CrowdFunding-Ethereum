@@ -22,6 +22,7 @@ class CampaignIndex extends Component {
                     </Link>
                 ),
                 fluid: true,
+                style: { overflowWrap: 'break-word' }
             };
         });
 
