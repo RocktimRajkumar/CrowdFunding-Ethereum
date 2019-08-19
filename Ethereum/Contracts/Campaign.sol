@@ -97,5 +97,18 @@ contract Campaign{
         request.complete = true;
         
     }
+
+    // function to retrieve Campaign balance, minimumContribution , no of requests , no of Contributors and manager address
+    function getSummary() public view returns (
+        uint, uint, uint, uint, address
+        ) {
+        return (
+            minimumContribution,
+            address(this).balance,
+            requests.length,
+            approversCount,
+            manager
+            );
+    }
     
 }
