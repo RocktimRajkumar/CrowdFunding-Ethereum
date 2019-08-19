@@ -108,7 +108,12 @@ contract Campaign{
             requests.length,
             approversCount,
             manager
-            );
+            ); 
+    }
+
+    // returing no of requests
+    function getRequestsCount() public view returns (uint) {
+        return  requests.length;
     }
     
 }
