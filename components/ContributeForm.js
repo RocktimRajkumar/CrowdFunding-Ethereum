@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Input, Message, Button } from 'semantic-ui-react';
 import Campaign from '../Ethereum/campaign';
 import web3 from '../Ethereum/web3';
+import { Router } from '../routes';
 
 
 export default class ContributeForm extends Component {
@@ -20,6 +21,8 @@ export default class ContributeForm extends Component {
                 from: accounts[0],
                 value: web3.utils.toWei(this.state.value, 'ether')
             });
+
+            Router.replaceRoute(`/campaigns/${this.props.address}`);
         } catch (error) {
 
         }
