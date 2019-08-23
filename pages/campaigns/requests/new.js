@@ -29,6 +29,10 @@ export default class RequestNew extends Component {
 
         try {
             const accounts = await web3.eth.getAccounts();
+
+            if (recipient == '') {
+                throw new Error('address cannot be empty');
+            }
             await campaign.methods.createRequest(
                 description,
                 web3.utils.toWei(value, 'ether'),
