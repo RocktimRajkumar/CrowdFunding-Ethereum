@@ -21,7 +21,7 @@ export default class RequestIndex extends Component {
         return { address, requests, requestCount };
     }
 
-    renderRow() {
+    renderRows() {
         return this.props.requests.map((request, index) => {
             return <RequestRow
                 key={index}
@@ -56,6 +56,10 @@ export default class RequestIndex extends Component {
                             <HeaderCell>Finalize</HeaderCell>
                         </Row>
                     </Header>
+
+                    <Body>
+                        { this.renderRows() }
+                    </Body>
                 </Table>
 
             </Layout>
