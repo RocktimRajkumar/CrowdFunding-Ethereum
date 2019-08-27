@@ -26,6 +26,7 @@ export default class RequestIndex extends Component {
             return <RequestRow
                 key={index}
                 request={request}
+                id={index}
                 address={this.props.address}
             />;
         });
@@ -58,7 +59,7 @@ export default class RequestIndex extends Component {
                     </Header>
 
                     <Body>
-                        { this.renderRows() }
+                        {this.renderRows()}
                     </Body>
                 </Table>
 
