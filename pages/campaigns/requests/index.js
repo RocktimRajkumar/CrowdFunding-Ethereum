@@ -3,6 +3,7 @@ import { Button, Table } from 'semantic-ui-react';
 import Layout from '../../../components/Layout';
 import { Link } from '../../../routes';
 import Campaings from '../../../Ethereum/campaign';
+import RequestRow from '../../../components/RequestRow';
 
 export default class RequestIndex extends Component {
 
@@ -18,6 +19,16 @@ export default class RequestIndex extends Component {
         );
 
         return { address, requests, requestCount };
+    }
+
+    renderRow() {
+        return this.props.requests.map((request, index) => {
+            return <RequestRow
+                key={index}
+                request={request}
+                address={this.props.address}
+            />;
+        });
     }
 
     render() {
