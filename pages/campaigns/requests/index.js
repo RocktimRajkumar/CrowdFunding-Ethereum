@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Button, Table } from 'semantic-ui-react';
+import { Button, Table, Grid, Icon, Label } from 'semantic-ui-react';
 import Layout from '../../../components/Layout';
 import { Link } from '../../../routes';
 import Campaings from '../../../Ethereum/campaign';
 import RequestRow from '../../../components/RequestRow';
+import web3 from '../../../Ethereum/web3';
 
 export default class RequestIndex extends Component {
 
@@ -12,6 +13,8 @@ export default class RequestIndex extends Component {
         const campaign = Campaings(address);
         const requestCount = await campaign.methods.getRequestsCount().call();
         const approversCount = await campaign.methods.approversCount().call();
+        const summary = await campaign.methods.getSummary().call();
+        const contractBalance = summary[1];
 
         const requests = await Promise.all(
             Array(parseInt(requestCount)).fill().map((element, index) => {
@@ -19,7 +22,7 @@ export default class RequestIndex extends Component {
             })
         );
 
-        return { address, requests, requestCount, approversCount };
+        return { address, requests, requestCount, approversCount, contractBalance };
     }
 
     renderRows() {
@@ -37,15 +40,35 @@ export default class RequestIndex extends Component {
     render() {
 
         const { Header, Row, HeaderCell, Body } = Table;
+        const campaignsBalance = this.props.contractBalance;
 
         return (
             <Layout>
                 <h3>Request</h3>
-                <Link route={`/campaigns/${this.props.address}/requests/new`}>
-                    <a>
-                        <Button primary>Add Request</Button>
-                    </a>
-                </Link>
+                <Grid columns='equal'>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Link route={`/campaigns/${this.props.address}/requests/new`}>
+                                <a>
+                                    <Button primary>Add Request</Button>
+                                </a>
+                            </Link>
+                        </Grid.Column>
+                        <Grid.Column textAlign='center'>
+                            <Label>
+                                <Icon name='ethereum' /> {web3.utils.fromWei(campaignsBalance, 'ether')} ether
+                            </Label>
+                        </Grid.Column>
+                        <Grid.Column textAlign='right'>
+                            <Link route={`/campaigns/${this.props.address}/`}>
+                                <a>
+                                    <Button icon><Icon name='home' /></Button>
+                                </a>
+                            </Link>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+
 
                 <Table>
                     <Header>
