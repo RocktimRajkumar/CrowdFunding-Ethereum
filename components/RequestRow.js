@@ -28,16 +28,18 @@ export default class RequestRow extends Component {
         const { Row, Cell } = Table;
         const { id, request, approversCount } = this.props;
         return (
-            <Row>
+            <Row disabled={request.complete}>
                 <Cell>{id}</Cell>
                 <Cell>{request.description}</Cell>
                 <Cell>{web3.utils.fromWei(request.value, 'ether')} (ether)</Cell>
                 <Cell>{request.recipient}</Cell>
                 <Cell>{request.approvalCount}/{approversCount}</Cell>
                 <Cell>
-                    <Button color='green' basic onClick={this.onApprove}>Approve</Button>
+                    {request.complete ? null : (<Button color='green' basic onClick={this.onApprove}>Approve</Button>)}
                 </Cell>
-                <Cell><Button color='teal' basic onClick={this.onFinalize}>Finalize</Button></Cell>
+                <Cell>
+                    {request.complete ? null : (<Button color='teal' basic onClick={this.onFinalize}>Finalize</Button>)}
+                </Cell>
             </Row>
         );
     }
