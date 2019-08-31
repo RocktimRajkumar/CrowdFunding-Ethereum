@@ -88,6 +88,8 @@ export default class RequestIndex extends Component {
                     </Body>
                 </Table>
 
+                <div>Found {this.props.requestCount} requests.</div>
+
             </Layout>
         )
     }
