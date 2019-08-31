@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Button } from 'semantic-ui-react';
+import { Table, Button, Message, Icon, Popup } from 'semantic-ui-react';
 import web3 from '../Ethereum/web3';
 import Campaign from '../Ethereum/campaign';
 
@@ -68,16 +68,28 @@ export default class RequestRow extends Component {
         const readyToFinalize = request.approvalCount > approversCount / 2;
 
         return (
-            <Row disabled={request.complete} positive={readyToFinalize && !request.complete}>
+            <Row disabled={request.complete} positive={readyToFinalize && !request.complete} >
                 <Cell>{id}</Cell>
                 <Cell>{request.description}</Cell>
                 <Cell>{web3.utils.fromWei(request.value, 'ether')} (ether)</Cell>
                 <Cell>{request.recipient}</Cell>
                 <Cell>{request.approvalCount}/{approversCount}</Cell>
-                <Cell>
+                <Cell error={!!this.state.errorMessageApprove}>
+                    <Popup
+                        header="Error"
+                        content={this.state.errorMessageApprove}
+                        trigger={<Icon name='attention'
+                            style={{ display: this.state.errorMessageApprove ? 'inline-block' : 'none' }} />}
+                        hoverable />
                     {request.complete ? null : (<Button color='green' loading={this.state.loadingApprove} basic onClick={this.onApprove}>Approve</Button>)}
                 </Cell>
-                <Cell>
+                <Cell error={!!this.state.errorMessageFinalize}>
+                    <Popup
+                        header="Error"
+                        content={this.state.errorMessageFinalize}
+                        trigger={<Icon name='attention'
+                            style={{ display: this.state.errorMessageFinalize ? 'inline-block' : 'none' }} />}
+                        hoverable />
                     {request.complete ? null : (<Button color='teal' loading={this.state.loadingFinalize} basic onClick={this.onFinalize}>Finalize</Button>)}
                 </Cell>
             </Row>
