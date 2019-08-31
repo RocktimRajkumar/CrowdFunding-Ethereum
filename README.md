@@ -57,7 +57,13 @@
 
 	> mnemonic = 'Your mnemonic code' <br>
 	link = 'Your infura end point link '
+	
+ 6. Deploy Contract by going into Ethereum Directory and run.
+	> node deploy.js
 
+	Copy the contract deploy address and replace it in factory.js file.
+
+ 7. Replace your "infura end point link" in web3.js file
 
 ### `Dependencies Used`
 
