@@ -3,13 +3,14 @@
 
 ## Screen-shot
 ### Home Page
-![Home Page](https://photos.google.com/share/AF1QipONopNW2M3jk3dEp-xOnj-Oz2NXNhnf8exawArvL99fDxUrDfsmCbJz1MRTqJkrCQ/photo/AF1QipO8TkJwF3bqq5H80su9MX8DKft8NU_bbSPsfS9e?key=aGp0dUlkclo0R1JORE5jREtqdnA2Z1JyRkhxblN3)
+![Home Page](https://drive.google.com/uc?export=view&id=1_uepSKJ43kZ2hiW7OUYZMPn9nX3EbhRj)
   
 ### Campaigns Dashboard
-![Campaigns Dashboard](https://photos.google.com/share/AF1QipONopNW2M3jk3dEp-xOnj-Oz2NXNhnf8exawArvL99fDxUrDfsmCbJz1MRTqJkrCQ/photo/AF1QipPPIWdOxKwzL_N07-pwc-XRvs9nhbyzZDv2yBep?key=aGp0dUlkclo0R1JORE5jREtqdnA2Z1JyRkhxblN3)
+
+![Campaigns Dashboard](https://drive.google.com/uc?export=view&id=1RbM93-LrsbgpSObkTa5kp09OBDzH1Qxf)
 
 ### Campaigns Request
-![Campaigns Request](https://photos.google.com/share/AF1QipONopNW2M3jk3dEp-xOnj-Oz2NXNhnf8exawArvL99fDxUrDfsmCbJz1MRTqJkrCQ/photo/AF1QipO0AUJ6LeR79-lNeCEB3OEdW8DHH0kAWHi8zJnH?key=aGp0dUlkclo0R1JORE5jREtqdnA2Z1JyRkhxblN3)
+![Campaigns Request](https://drive.google.com/uc?export=view&id=1uU5qLDy6GXbEjedySqx6AJCxw9Ro57MC)
 
 
 ### `CampaignFactory`
