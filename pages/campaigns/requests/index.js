@@ -48,9 +48,9 @@ export default class RequestIndex extends Component {
                 <Grid columns='equal'>
                     <Grid.Row>
                         <Grid.Column>
-                            <Link route={`/campaigns/${this.props.address}/requests/new`}>
+                            <Link route={`/campaigns/${this.props.address}/`}>
                                 <a>
-                                    <Button primary>Add Request</Button>
+                                    <Button icon><Icon name='home' /></Button>
                                 </a>
                             </Link>
                         </Grid.Column>
@@ -60,9 +60,9 @@ export default class RequestIndex extends Component {
                             </Label>
                         </Grid.Column>
                         <Grid.Column textAlign='right'>
-                            <Link route={`/campaigns/${this.props.address}/`}>
+                            <Link route={`/campaigns/${this.props.address}/requests/new`}>
                                 <a>
-                                    <Button icon><Icon name='home' /></Button>
+                                    <Button primary>Add Request</Button>
                                 </a>
                             </Link>
                         </Grid.Column>
