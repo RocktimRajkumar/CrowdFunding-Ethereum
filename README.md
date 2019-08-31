@@ -1,6 +1,17 @@
 # &#x1F4DC; Campaign Contract
  A new way of funding a project or venture by raising small amounts of money from a large number of people via ethereum blockchain technology without any middleman to function or to manage a user’s information.
 
+## Screen-shot
+### Home Page
+![Home Page](https://photos.google.com/share/AF1QipONopNW2M3jk3dEp-xOnj-Oz2NXNhnf8exawArvL99fDxUrDfsmCbJz1MRTqJkrCQ/photo/AF1QipO8TkJwF3bqq5H80su9MX8DKft8NU_bbSPsfS9e?key=aGp0dUlkclo0R1JORE5jREtqdnA2Z1JyRkhxblN3)
+  
+### Campaigns Dashboard
+![Campaigns Dashboard](https://photos.google.com/share/AF1QipONopNW2M3jk3dEp-xOnj-Oz2NXNhnf8exawArvL99fDxUrDfsmCbJz1MRTqJkrCQ/photo/AF1QipPPIWdOxKwzL_N07-pwc-XRvs9nhbyzZDv2yBep?key=aGp0dUlkclo0R1JORE5jREtqdnA2Z1JyRkhxblN3)
+
+### Campaigns Request
+![Campaigns Request](https://photos.google.com/share/AF1QipONopNW2M3jk3dEp-xOnj-Oz2NXNhnf8exawArvL99fDxUrDfsmCbJz1MRTqJkrCQ/photo/AF1QipO0AUJ6LeR79-lNeCEB3OEdW8DHH0kAWHi8zJnH?key=aGp0dUlkclo0R1JORE5jREtqdnA2Z1JyRkhxblN3)
+
+
 ### `CampaignFactory`
 
 **Variables**
