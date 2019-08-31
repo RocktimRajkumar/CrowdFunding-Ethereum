@@ -5,23 +5,61 @@ import Campaign from '../Ethereum/campaign';
 
 export default class RequestRow extends Component {
 
-    onApprove = async () => {
-        const campaign = Campaign(this.props.address);
+    state = {
+        errorMessageApprove: '',
+        loadingApprove: false,
+        errorMessageFinalize: '',
+        loadingFinalize: false,
+    };
 
-        const accounts = await web3.eth.getAccounts();
-        await campaign.methods.approveRequest(this.props.id).send({
-            from: accounts[0]
+    onApprove = async () => {
+
+        this.setState({
+            loadingApprove: true,
+            errorMessageApprove: ''
         });
+
+        try {
+            const campaign = Campaign(this.props.address);
+
+            const accounts = await web3.eth.getAccounts();
+            await campaign.methods.approveRequest(this.props.id).send({
+                from: accounts[0]
+            });
+        }
+        catch (error) {
+            this.setState({
+                errorMessageApprove: error.message
+            });
+        } finally {
+            this.setState({
+                loadingApprove: false,
+            });
+        }
     };
 
     onFinalize = async () => {
-        const campaign = Campaign(this.props.address);
-
-        const accounts = await web3.eth.getAccounts();
-
-        await campaign.methods.finalizeRequest(this.props.id).send({
-            from: accounts[0]
+        this.setState({
+            loadingFinalize: true,
+            errorMessageFinalize: ''
         });
+        try {
+            const campaign = Campaign(this.props.address);
+
+            const accounts = await web3.eth.getAccounts();
+
+            await campaign.methods.finalizeRequest(this.props.id).send({
+                from: accounts[0]
+            });
+        } catch (error) {
+            this.setState({
+                errorMessageFinalize: error.message
+            });
+        } finally {
+            this.setState({
+                loadingFinalize: false,
+            });
+        }
     };
 
     render() {
@@ -37,10 +75,10 @@ export default class RequestRow extends Component {
                 <Cell>{request.recipient}</Cell>
                 <Cell>{request.approvalCount}/{approversCount}</Cell>
                 <Cell>
-                    {request.complete ? null : (<Button color='green' basic onClick={this.onApprove}>Approve</Button>)}
+                    {request.complete ? null : (<Button color='green' loading={this.state.loadingApprove} basic onClick={this.onApprove}>Approve</Button>)}
                 </Cell>
                 <Cell>
-                    {request.complete ? null : (<Button color='teal' basic onClick={this.onFinalize}>Finalize</Button>)}
+                    {request.complete ? null : (<Button color='teal' loading={this.state.loadingFinalize} basic onClick={this.onFinalize}>Finalize</Button>)}
                 </Cell>
             </Row>
         );
